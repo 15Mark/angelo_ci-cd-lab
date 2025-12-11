@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: cleanup-task
+spec:
+  steps:
+    - name: cleanup
+      image: bitnami/kubectl:latest
+      script: |
+        #!/bin/sh
+        echo "Cleaning up Angelo CI/CD lab resources..."
+        # Delete pods labeled app=angelo-app
+        kubectl delete pod -l app=angelo-app || echo "No Angelo app pods to delete"
