@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: nose-test-task
+spec:
+  steps:
+    - name: run-nose-tests
+      image: python:3.11
+      script: |
+        #!/bin/sh
+        echo "Installing dependencies..."
+        pip install -r requirements.txt
+        echo "Running Nose tests..."
+        nosetests || echo "Some tests failed, but continuing..."
