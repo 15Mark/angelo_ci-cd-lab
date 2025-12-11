@@ -1,0 +1,13 @@
+{
+  "name": "angelo_ci-cd-lab",
+  "version": "1.0.0",
+  "description": "CI/CD lab project with GitHub Actions, Tekton, and OpenShift",
+  "main": "index.js",
+  "scripts": {
+    "lint": "echo 'Linting code...' && exit 0",
+    "test": "echo 'Running unit tests...' && exit 0"
+  },
+  "author": "ANGELO",
+  "license": "MIT",
+  "devDependencies": {}
+}
